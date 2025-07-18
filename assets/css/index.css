@@ -5,23 +5,29 @@
   font-style: normal;
 }
 
+:root{
+    --lcdsize:100px;
+}
+
+
 body{
     background: black;
 }
 
 .lcd-main{
     display: flex;
-    /* align-items: center; */
     justify-content: center;
     flex-direction: column;
-    margin-top: 5rem;
-    
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 .lcd-top{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between
+
 }
 
 .lcd-numbers{
@@ -31,14 +37,14 @@ body{
 .lcd-back{
     font-family: 'Digital';
     color: #363636;
-    font-size: 150px;
+    font-size: var(--lcdsize);
     position: relative;
 }
 
 .lcd-front{
     font-family: 'Digital';
     color: red;
-    font-size: 150px;
+    font-size: var(--lcdsize);
     position: absolute;
     top: 0;
     left: 0;
@@ -51,6 +57,214 @@ body{
     cursor: pointer;
 }
 
+.button-left img, .button-right img{
+    width: 70px;
+}
+
 .button-right img{
     transform: rotate(180deg);
+}
+
+
+/* PROPIEDADES INFERIORES */
+
+.lcd-buttom{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+    gap:50px;
+}
+
+
+/* LCD IZQUIERDO INFERIOR */
+
+.lcd-left{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lcd-left_title{
+    color: white;
+}
+
+.lcd-left_title h1{
+    margin: 0;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.lcd-left_display{
+    position: relative;
+}
+
+.lcd-left_display-back, .lcd-left_display-front{
+    font-family: 'Digital';
+    font-size: 95px;
+}
+
+.lcd-left_display-back{
+    color: #363636;
+    position: relative;
+}
+
+.lcd-left_display-front{
+    color: yellow;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.lcd-left_container{
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.lcd-left-buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lcd-left-buttons button{
+    background: transparent;
+    color: yellow;
+    border: 1.5px solid yellow;
+    width: 40px;
+    height: 40px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.lcd-left-buttons button:first-child{
+    /* background-color: red; */
+    height: 50px;
+}
+
+
+/* LCD CENTRAL */
+
+.lcd-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lcd-center_display{
+    position: relative;
+}
+
+.lcd-center-back, .lcd-center-front{
+    font-family: 'Digital';
+    font-size: 80px;
+}
+
+.lcd-center-back{
+    color: #363636;
+    position: relative;
+}
+
+.lcd-center-front{
+    color: green;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+}
+
+.reset{
+    background: transparent;
+    border: 1.2px solid green;
+    font-size: 20px;
+    color: green;
+    cursor: pointer;
+}
+
+/* LCD DERECHO INFERIOR */
+
+.lcd-right{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lcd-right_title{
+    color: white;
+}
+
+.lcd-right_title h1{
+    margin: 0;
+    text-align: left;
+    margin-right: 10px;
+}
+
+.lcd-right_display{
+    position: relative;
+}
+
+.lcd-right_display-back, .lcd-right_display-front{
+    font-family: 'Digital';
+    font-size: 95px;
+}
+
+.lcd-right_display-back{
+    color: #363636;
+    position: relative;
+}
+
+.lcd-right_display-front{
+    color: yellow;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.lcd-right_container{
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.lcd-right-buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lcd-right-buttons button{
+    background: transparent;
+    color: yellow;
+    border: 1.5px solid yellow;
+    width: 40px;
+    height: 40px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.lcd-right-buttons button:first-child{
+    /* background-color: red; */
+    height: 50px;
+}
+
+/* 
+AJUSTE CON RESPECTO A LA ORIENTACION
+LA PANTALLA */
+
+@media screen and (orientation: portrait) {
+  .lcd-main {
+    transform: rotate(90deg);
+    margin-top: 17rem;
+  }
+
+}
+
+/* Estilos para modo horizontal (landscape) */
+@media screen and (orientation: landscape) {
+    .lcd-main {
+    transform: rotate(0deg);
+    margin-top: 1rem;
+  }
+
 }
