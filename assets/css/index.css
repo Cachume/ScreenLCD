@@ -267,11 +267,8 @@ LA PANTALLA */
 
 @media screen and (orientation: portrait) {
   .lcd-main {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(90deg) scale(0.6);
-    transform-origin: center;
+    transform: rotate(90deg);
+    margin-top: 17rem;
   }
 
 }
